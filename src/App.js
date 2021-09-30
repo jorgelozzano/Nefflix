@@ -1,8 +1,9 @@
+import Header from './UI/Header'
 
 function App() {
   return (
     <div className="App">
-      <h1>Nefflix</h1>
+      <Header />
     </div>
   );
 }
