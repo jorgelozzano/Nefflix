@@ -7,7 +7,7 @@ const MongoClient = mongodb.MongoClient
 const port = process.env.PORT || 8000
 
 MongoClient.connect(
-    process.env.RESTREVIEWS_DB_URI,{
+    process.env.NEFFLIX_DB_URI,{
         wtimeout: 2500,
     }
 ).catch(err => {
