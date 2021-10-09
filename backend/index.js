@@ -9,6 +9,7 @@ const port = process.env.PORT || 8000
 MongoClient.connect(
     process.env.NEFFLIX_DB_URI,{
         wtimeout: 2500,
+        useNewUrlParser: true
     }
 ).catch(err => {
     console.error(err.stack)
