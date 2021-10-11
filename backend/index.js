@@ -1,6 +1,6 @@
-import app from "./server.js"
-import mongodb from "mongodb"
-import dotenv from "dotenv"
+const app = require("./server.js")
+const mongodb = require("mongodb")
+const dotenv = require("dotenv")
 dotenv.config()
 const MongoClient = mongodb.MongoClient
 
