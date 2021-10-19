@@ -7,14 +7,15 @@ export default class movieController{
     }
 
     //Get Latest Movies
-    static getLatest(req,res){
+    static async getLatest(req,res){
        
-       var data = getAllMovies().then(console.log(data+ "resuelto")); 
+       var data = await getAllMovies().then(console.log(data + "resuelto")); 
 
        return res.status(200).send({
            movie: data
        });
-    }      
+    } 
+    
 }
 
 //Funciones
