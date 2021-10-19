@@ -4,5 +4,7 @@ import movieController from "../api/movieController.js"
 const router = express.Router();
 
 router.get("/test", movieController.test);
+router.get("/lastest", movieController.getLatest);
+router.get("/inf", movieController.getDetails);
 
 export default router
