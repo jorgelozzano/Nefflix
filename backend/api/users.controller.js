@@ -27,25 +27,25 @@ export default class UsersController {
         res.json(response)
     }
 
-    static async apiPostUsers(req,res,next){
-        try{
+    static async apiPostUsers(req, res, next) {
+        try {
             const userId = req.body.user_id
             const name = req.body.name
             const password = req.body.password
-            
+
             const userResponse = await usersDAO.addUser(
                 userId,
                 name,
                 password
             )
-            res.json({status: "success"})
-        }catch(e){
-            res.status(500).json({error: e.message})
+            res.json({ status: "success" })
+        } catch (e) {
+            res.status(500).json({ error: e.message })
         }
     }
 
-    static async apiUpdateUsers(req,res,next){
-        try{
+    static async apiUpdateUsers(req, res, next) {
+        try {
             const userId = req.body.user_id
             const name = req.body.name
             const password = req.body.password
@@ -58,30 +58,30 @@ export default class UsersController {
             )
 
             var { error } = userResponse
-            if(error){
-                res.status(400).json({error})
+            if (error) {
+                res.status(400).json({ error })
             }
-            if(userResponse.modifiedCount === 0){
+            if (userResponse.modifiedCount === 0) {
                 throw new Error(
                     "unable to update user"
                 )
             }
-            res.json({status: "success"})
-        }catch(e){
-            res.status(500).json({error: e.message})
+            res.json({ status: "success" })
+        } catch (e) {
+            res.status(500).json({ error: e.message })
         }
     }
 
-    static async apiDeleteUsers(req,res,next){
-        try{
+    static async apiDeleteUsers(req, res, next) {
+        try {
             const userId = req.body.user_id
             console.log(userId)
             const userResponse = await usersDAO.deleteUser(
                 userId
             )
-            res.json({status: "success"})
-        }catch(e){
-            res.status(500).json({error: e.message})
+            res.json({ status: "success" })
+        } catch (e) {
+            res.status(500).json({ error: e.message })
         }
     }
 }
