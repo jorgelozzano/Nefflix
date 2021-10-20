@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-export default class movieController{
+export default class movieController {
     //Testing
     static test(req, res) {
         return res.status(200).send("Hello World")
@@ -8,6 +8,7 @@ export default class movieController{
 
    
     //Get Latest Movies
+<<<<<<< HEAD
     static async getLatest(req,res){
        
        var data = await getAllMovies().then(console.log(data + "resuelto")); 
@@ -26,16 +27,40 @@ export default class movieController{
         });
      } 
     
+=======
+    static async getLatest(req, res) {
+
+        var data = await getAllMovies().then(console.log("data: " + data + "; estado: resuelto"));
+
+        return res.status(200).send({
+            movie: data
+        });
+    }
+
+    static async getJustOneMovie(req,res,next){
+        var data = await getJustOneMovie().then(console.log("data: " + data));
+        return res.status(200).send({
+            movie: data
+        })
+    }
+
+>>>>>>> 04f73e602d95bdf383ff7fb981f8c5369b6904ec
 }
 
 //Funciones
-async function getAllMovies(){
+async function getAllMovies() {
     var answer = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=13077fefd6d3c1627ec9cf236ac5726b&language=en-US&page=1");
     return await answer.json();
 }
 
+<<<<<<< HEAD
 async function getMovieInf(){
 
     var answer = await fetch("https://api.themoviedb.org/3/movie/580489?api_key=13077fefd6d3c1627ec9cf236ac5726b&language=en-US");
     return await answer.json();
+=======
+async function getJustOneMovie(){
+    var response = await fetch("https://api.themoviedb.org/3/movie/76341?api_key=13077fefd6d3c1627ec9cf236ac5726b")
+    return await response.json();
+>>>>>>> 04f73e602d95bdf383ff7fb981f8c5369b6904ec
 }
