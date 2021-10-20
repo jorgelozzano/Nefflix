@@ -7,6 +7,4 @@ router.get("/test", movieController.test);
 router.get("/lastest", movieController.getLatest);
 router.get("/movie", movieController.getJustOneMovie);
 
-//Hola
-
 export default router
