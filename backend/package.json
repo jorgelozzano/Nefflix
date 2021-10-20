@@ -13,9 +13,18 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+<<<<<<< HEAD
     "express": "^4.17.1"
+=======
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0"
+>>>>>>> d28bc444c51a75e13db5ae061f34c1f322f17092
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d28bc444c51a75e13db5ae061f34c1f322f17092
