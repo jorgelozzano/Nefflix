@@ -35,3 +35,5 @@ async function getJustOneMovie(){
     var response = await fetch("https://api.themoviedb.org/3/movie/76341?api_key=13077fefd6d3c1627ec9cf236ac5726b")
     return await response.json();
 }
+
+///Ejemplo de agregado
